@@ -1,0 +1,23 @@
+.tasksAside {
+  flex-grow: 1;
+  background-color: #fff;
+  margin-right: 1rem;
+  border-radius: 10px;
+}
+
+.taskListHeader,
+.taskList {
+  padding: 1rem;
+}
+
+.taskListHeader h3 {
+  font-size: 14px;
+}
+
+.taskList {
+}
+
+.taskList ul {
+  list-style-type: none;
+  padding: 0;
+}
