@@ -1,0 +1,10 @@
+li {
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 18px;
+  margin-bottom: 1rem;
+}
+
+li img {
+  margin: 0 0.5rem;
+}
