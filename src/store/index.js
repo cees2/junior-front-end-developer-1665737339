@@ -1,8 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
-import tasksSlice from "./messageSlice";
+import messageSlice from "./messageSlice";
+import tasksSlice from "./tasksSlice";
 
 const store = configureStore({
-  reducer: { tasks: tasksSlice },
+  reducer: { messages: messageSlice, tasks: tasksSlice },
 });
 
 export default store;

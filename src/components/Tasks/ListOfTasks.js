@@ -10,9 +10,10 @@ const ListOfTasks = () => {
       </div>
       <div className={classes.taskList}>
         <ul>
-          {DUMMY_TASKS.map((task) => (
+          {DUMMY_TASKS.map((task, i) => (
             <SingleTask
               key={task.task_id}
+              id={i}
               taskTitle={task.title}
               status={task.status}
             />

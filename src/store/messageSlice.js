@@ -1,7 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const tasksSlice = createSlice({
-  name: "tasks",
+const messageSlice = createSlice({
+  name: "messages",
   initialState: {
     currentMessageIndex: -1,
   },
@@ -15,6 +15,6 @@ const tasksSlice = createSlice({
   },
 });
 
-export const tasksActions = tasksSlice.actions;
+export const tasksActions = messageSlice.actions;
 
-export default tasksSlice.reducer;
+export default messageSlice.reducer;

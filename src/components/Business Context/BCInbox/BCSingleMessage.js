@@ -21,7 +21,7 @@ const BCSingleMessage = (props) => {
   const { isNew, author, title, content, createdAt } = props.data;
   const dispatch = useDispatch();
   const activeTaskIndex = useSelector(
-    (state) => state.tasks.currentMessageIndex
+    (state) => state.messages.currentMessageIndex
   );
 
   const date = new Date(createdAt);

@@ -1,3 +1,8 @@
+a {
+  text-decoration: none;
+  color: black;
+}
+
 li.taskItem {
   font-weight: 500;
   font-size: 12px;
@@ -6,6 +11,7 @@ li.taskItem {
   transition: 0.25s;
   border-radius: 6px;
   max-width: 80%;
+  font-weight: 500;
 }
 
 li.taskItem:hover {
@@ -17,4 +23,8 @@ li.taskItem img {
   margin: 0 0.5rem;
   width: 10px;
   height: 10px;
+}
+
+.activeTask {
+  font-weight: 600;
 }
