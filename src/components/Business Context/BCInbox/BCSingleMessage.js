@@ -1,33 +1,58 @@
 import classes from "./BCSingleMessage.module.css";
+import { useSelector, useDispatch } from "react-redux";
+import { tasksActions } from "../../../store/messageSlice";
+
+const MONTH_NAMES = [
+  "Jan",
+  "Feb",
+  "Mar",
+  "Apr",
+  "May",
+  "Jun",
+  "Jul",
+  "Aug",
+  "Sep",
+  "Oct",
+  "Nov",
+  "Dec",
+];
 
 const BCSingleMessage = (props) => {
+  const { isNew, author, title, content, createdAt } = props.data;
+  const dispatch = useDispatch();
+  const activeTaskIndex = useSelector(
+    (state) => state.tasks.currentMessageIndex
+  );
+
+  const date = new Date(createdAt);
+  const correctDateFormat = `${MONTH_NAMES[date.getMonth()]} ${date.getDate()}`;
+
+  let wrapperClasses = isNew
+    ? `${classes.singleMessageWrapper} ${classes.newMessage}`
+    : `${classes.singleMessageWrapper}`;
+
+  if (props.messageIndex === activeTaskIndex)
+    wrapperClasses += ` ${classes.activeMessage}`;
+
+  const activeMessageHandler = () => {
+    dispatch(tasksActions.resetIndex());
+    dispatch(tasksActions.setIndex(props.messageIndex));
+  };
+
   return (
-    <div className={classes.singleMessageWrapper}>
+    <div className={wrapperClasses} onClick={activeMessageHandler}>
       <header className={classes.singleMessageHeader}>
-        {props.isNew && <span className={classes.newBadge}>NEW</span>}
+        {isNew && <span className={classes.newBadge}>NEW</span>}
         <ul className={classes.singleMessageList}>
           <li>
-            Olga Nelson <span className={classes.inboxDot}>•</span>
+            {author} <span className={classes.inboxDot}>•</span>
           </li>
-          <li>Dec 17</li>
+          <li>{correctDateFormat}</li>
         </ul>
       </header>
       <main className={classes.singleMessageMain}>
-        <h4 className={classes.singleMessageTitle}>
-          New sprint, tasks and intro information
-        </h4>
-        <p className={classes.singleMessageContent}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus ac
-          ligula malesuada, ultricies lectus vel, posuere elit. Quisque auctor
-          lectus a ornare mattis. Interdum et malesuada fames ac ante ipsum
-          primis in faucibus. Quisque faucibus sollicitudin erat, nec elementum
-          ante tincidunt quis. Proin molestie diam sed lacus sodales congue.
-          Fusce aliquam lacinia eros, sit amet cursus dui finibus vitae. Aenean
-          semper, metus quis fringilla vehicula, orci est mattis arcu, non
-          cursus justo ligula et ex. Etiam vitae nulla congue tortor cursus
-          sagittis. Vivamus maximus, risus quis imperdiet sollicitudin, elit
-          magna rhoncus erat, a laoreet sem turpis sed enim.
-        </p>
+        <h4 className={classes.singleMessageTitle}>{title}</h4>
+        <p className={classes.singleMessageContent}>{content}</p>
       </main>
     </div>
   );

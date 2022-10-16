@@ -29,19 +29,7 @@ const BCContent = () => {
             </ul>
           </div>
           <div className={classes.messageContentWrapper}>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-              ac ligula malesuada, ultricies lectus vel, posuere elit. Quisque
-              auctor lectus a ornare mattis. Interdum et malesuada fames ac ante
-              ipsum primis in faucibus. Quisque faucibus sollicitudin erat, nec
-              elementum ante tincidunt quis. Proin molestie diam sed lacus
-              sodales congue. Fusce aliquam lacinia eros, sit amet cursus dui
-              finibus vitae. Aenean semper, metus quis fringilla vehicula, orci
-              est mattis arcu, non cursus justo ligula et ex. Etiam vitae nulla
-              congue tortor cursus sagittis. Vivamus maximus, risus quis
-              imperdiet sollicitudin, elit magna rhoncus erat, a laoreet sem
-              turpis sed enim.
-            </p>
+            <p></p>
           </div>
         </section>
       </main>
