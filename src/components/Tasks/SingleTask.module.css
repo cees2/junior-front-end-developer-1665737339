@@ -3,7 +3,7 @@ li.taskItem {
   font-size: 12px;
   line-height: 18px;
   padding: 0.5rem 0;
-  transition: 0.5s;
+  transition: 0.25s;
   border-radius: 6px;
   max-width: 80%;
 }

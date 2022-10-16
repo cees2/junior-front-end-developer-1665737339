@@ -3,8 +3,6 @@ import SingleTask from "./SingleTask";
 import DUMMY_TASKS from "../../store/tasks-store";
 
 const ListOfTasks = () => {
-  console.log("tutaj:", DUMMY_TASKS[0].statusCode);
-
   return (
     <aside className={classes.tasksAside}>
       <div className={classes.taskListHeader}>
