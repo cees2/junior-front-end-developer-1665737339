@@ -1,10 +1,20 @@
-li {
+li.taskItem {
   font-weight: 500;
   font-size: 12px;
   line-height: 18px;
-  margin-bottom: 1rem;
+  padding: 0.5rem 0;
+  transition: 0.5s;
+  border-radius: 6px;
+  max-width: 80%;
 }
 
-li img {
+li.taskItem:hover {
+  cursor: pointer;
+  background-color: rgba(96, 154, 209, 0.7);
+}
+
+li.taskItem img {
   margin: 0 0.5rem;
+  width: 10px;
+  height: 10px;
 }
