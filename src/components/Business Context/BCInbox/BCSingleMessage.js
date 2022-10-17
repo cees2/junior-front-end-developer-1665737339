@@ -1,6 +1,8 @@
 import classes from "./BCSingleMessage.module.css";
 import { useSelector, useDispatch } from "react-redux";
-import { tasksActions } from "../../../store/messageSlice";
+import DUMMY_TASKS from "../../../store/tasks-store";
+import { messageActions } from "../../../store/messageSlice";
+import { useParams } from "react-router-dom";
 
 const MONTH_NAMES = [
   "Jan",
@@ -20,9 +22,11 @@ const MONTH_NAMES = [
 const BCSingleMessage = (props) => {
   const { isNew, author, title, content, createdAt } = props.data;
   const dispatch = useDispatch();
-  const activeTaskIndex = useSelector(
+  const activeMessageIndex = useSelector(
     (state) => state.messages.currentMessageIndex
   );
+  const params = useParams();
+  const currentTaskIndex = params.taskId;
 
   const date = new Date(createdAt);
   const correctDateFormat = `${MONTH_NAMES[date.getMonth()]} ${date.getDate()}`;
@@ -31,12 +35,14 @@ const BCSingleMessage = (props) => {
     ? `${classes.singleMessageWrapper} ${classes.newMessage}`
     : `${classes.singleMessageWrapper}`;
 
-  if (props.messageIndex === activeTaskIndex)
+  if (props.messageIndex === activeMessageIndex)
     wrapperClasses += ` ${classes.activeMessage}`;
 
   const activeMessageHandler = () => {
-    dispatch(tasksActions.resetIndex());
-    dispatch(tasksActions.setIndex(props.messageIndex));
+    dispatch(messageActions.setIndex(props.messageIndex));
+    DUMMY_TASKS[currentTaskIndex].businessContexts[
+      props.messageIndex
+    ].isNew = false;
   };
 
   return (

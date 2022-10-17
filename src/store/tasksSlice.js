@@ -7,7 +7,7 @@ const tasksSlice = createSlice({
   },
   reducers: {
     resetIndex(state) {
-      state.activeTaskIndex = -1;
+      state.activeTaskIndex = 0;
     },
     setIndex(state, action) {
       state.activeTaskIndex = action.payload;
