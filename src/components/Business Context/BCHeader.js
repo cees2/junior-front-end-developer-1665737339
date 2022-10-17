@@ -5,7 +5,7 @@ const BCHeader = () => {
   return (
     <header className={classes.BCHeaderWrapper}>
       <ul className={classes.headerContentList}>
-        <li>
+        <li className={classes.activeListItem}>
           <div className={classes.compassWrapper}>
             <img src={Compass} alt="compass" />
           </div>
