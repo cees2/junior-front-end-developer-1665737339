@@ -8,7 +8,7 @@ function App() {
     <Layout>
       <Switch>
         <Route path="/" exact>
-          <Redirect to="/tasks" />
+          <Redirect to="/tasks/0" />
         </Route>
         <Route path="/tasks">
           <Tasks />
