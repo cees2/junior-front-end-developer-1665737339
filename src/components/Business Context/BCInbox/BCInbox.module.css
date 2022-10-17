@@ -8,3 +8,9 @@ aside.inboxWrapper {
   height: calc(100% - 2 * 0.5rem);
   background-color: #f4f5f7;
 }
+
+@media (max-width: 768px) {
+  aside.inboxWrapper {
+    flex-basis: 40%;
+  }
+}

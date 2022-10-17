@@ -11,3 +11,9 @@ main.BCMain {
   display: flex;
   height: 92.5%;
 }
+
+@media (max-width: 1200px) {
+  section.BCWrapper {
+    width: 100%;
+  }
+}

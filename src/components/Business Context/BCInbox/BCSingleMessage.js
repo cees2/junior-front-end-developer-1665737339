@@ -3,6 +3,7 @@ import { useSelector, useDispatch } from "react-redux";
 import DUMMY_TASKS from "../../../store/tasks-store";
 import { messageActions } from "../../../store/messageSlice";
 import { useParams } from "react-router-dom";
+import { responsiveActions } from "../../../store/responsiveSlice";
 
 const MONTH_NAMES = [
   "Jan",
@@ -25,6 +26,7 @@ const BCSingleMessage = (props) => {
   const activeMessageIndex = useSelector(
     (state) => state.messages.currentMessageIndex
   );
+
   const params = useParams();
   const currentTaskIndex = params.taskId;
 
@@ -40,6 +42,7 @@ const BCSingleMessage = (props) => {
 
   const activeMessageHandler = () => {
     dispatch(messageActions.setIndex(props.messageIndex));
+    dispatch(responsiveActions.toggleMessage());
     DUMMY_TASKS[currentTaskIndex].businessContexts[
       props.messageIndex
     ].isNew = false;

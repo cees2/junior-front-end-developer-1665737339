@@ -3,6 +3,7 @@ section.messageDetailsWrapper {
   padding: 1rem 2rem;
   height: calc(100% - 7.5% - 2 * 0.5rem);
   flex-grow: 1;
+  overflow: auto;
 }
 
 h1.messageSubject {
