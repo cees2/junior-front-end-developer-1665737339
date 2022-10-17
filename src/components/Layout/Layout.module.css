@@ -1,6 +1,5 @@
 .appWrapper {
   padding: 1rem;
-  min-width: 100%;
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -11,5 +10,6 @@ main.appMain {
   display: flex;
   justify-content: space-between;
   margin: 1rem 0 0;
-  flex-grow: 1;
+  height: calc(100% - 7.5% - 2 * 1rem);
+  width: 100%;
 }

@@ -1,12 +1,13 @@
 section.BCWrapper {
-  flex-basis: 75%;
   background-color: #fff;
   border-radius: 10px;
   display: flex;
   flex-direction: column;
+  height: 100%;
+  width: 75%;
 }
 
 main.BCMain {
   display: flex;
-  flex-grow: 1;
+  height: 92.5%;
 }

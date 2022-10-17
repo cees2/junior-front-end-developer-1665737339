@@ -3,7 +3,7 @@
   background-color: #fff;
   margin-right: 1rem;
   border-radius: 10px;
-  flex-shrink: 4;
+  height: 100%;
 }
 
 .taskListHeader,
